@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <RelativeLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/logo1"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/login_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginRight="104dp"
+        android:clickable="true"
+        android:text="Login Comi"
+        android:textSize="40sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <LinearLayout
+        android:id="@+id/loginpanel"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        android:paddingLeft="50dp"
+        android:paddingTop="50dp"
+        android:paddingRight="50dp"
+        android:layout_marginTop="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/login_panel"
+        android:orientation="vertical"
+        >
+        <EditText android:hint="Email"
+            android:id="@+id/edtEmail"
+            android:drawableRight="@drawable/ic_email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <EditText android:hint="Password"
+            android:id="@+id/edtPass"
+            android:drawableRight="@drawable/ic_pass"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot your password ?"/>
+        <TextView
+            android:id="@+id/signup_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign up ?"
+            android:gravity="end"/>
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnlg"
+        app:layout_constraintBottom_toBottomOf="@+id/loginpanel"
+        app:layout_constraintLeft_toLeftOf="@+id/loginpanel"
+        app:layout_constraintRight_toRightOf="@+id/loginpanel"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn"
+        android:text="login"
+        app:cornerRadius="50dp"
+        android:textColor="@color/black"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
