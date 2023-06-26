@@ -68,7 +68,7 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="485dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TextView
@@ -95,7 +95,7 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/btn1"
             android:textStyle="bold"
-            android:text="Assessment" />
+            android:text="đánh giá" />
 
         <Button
             android:id="@+id/button2"
