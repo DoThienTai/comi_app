@@ -60,4 +60,5 @@ public class Detail extends AppCompatActivity {
         //loadContent();
 
     }
+
 }
