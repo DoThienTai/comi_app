@@ -9,15 +9,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class CommentDatabase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "comments.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static final String TABLE_COMMENTS = "comments";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_NAME = "name";
     private static final String COLUMN_CONTENT = "content";
     private static final String COLUMN_RATING = "rating";
+    private static final String COLUMN_BOOK_TITLE = "book_title";
 
     public CommentDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -25,18 +27,17 @@ public class CommentDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Tạo bảng comments
         String createTable = "CREATE TABLE " + TABLE_COMMENTS + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_NAME + " TEXT,"
                 + COLUMN_CONTENT + " TEXT,"
-                + COLUMN_RATING + " REAL)";
+                + COLUMN_RATING + " REAL,"
+                + COLUMN_BOOK_TITLE + " TEXT)";
         db.execSQL(createTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Xóa bảng comments nếu tồn tại
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_COMMENTS);
         onCreate(db);
     }
@@ -47,6 +48,7 @@ public class CommentDatabase extends SQLiteOpenHelper {
         values.put(COLUMN_NAME, comment.getName());
         values.put(COLUMN_CONTENT, comment.getContent());
         values.put(COLUMN_RATING, comment.getRating());
+        values.put(COLUMN_BOOK_TITLE, comment.getBookTitle());
         db.insert(TABLE_COMMENTS, null, values);
         db.close();
     }
@@ -62,7 +64,8 @@ public class CommentDatabase extends SQLiteOpenHelper {
                 @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
                 @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT));
                 @SuppressLint("Range") float rating = cursor.getFloat(cursor.getColumnIndex(COLUMN_RATING));
-                Comment comment = new Comment(id, name, content, rating);
+                @SuppressLint("Range") String bookTitle = cursor.getString(cursor.getColumnIndex(COLUMN_BOOK_TITLE));
+                Comment comment = new Comment(id, name, content, rating, bookTitle);
                 commentList.add(comment);
             } while (cursor.moveToNext());
         }

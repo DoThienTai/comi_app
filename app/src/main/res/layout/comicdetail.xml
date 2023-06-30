@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -24,9 +25,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:theme="@style/Theme.AppCompat.Light"
-                app:layout_collapseMode="pin"></androidx.appcompat.widget.Toolbar>
+                app:layout_collapseMode="pin" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -74,10 +75,10 @@
         <TextView
             android:id="@+id/desc_detail"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="comic description"
+            android:layout_height="wrap_content"
+            android:text="Comic description"
             android:textColor="#000000"
-            android:textSize="25dp" />
+            android:textSize="25sp" />
 
     </androidx.core.widget.NestedScrollView>
 

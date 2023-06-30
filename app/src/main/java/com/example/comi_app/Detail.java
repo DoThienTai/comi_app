@@ -46,6 +46,8 @@ public class Detail extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Detail.this,AssessComic.class);
+                intent.putExtra("bookTitle", nameDetail);
+
                 startActivity(intent);
             }
         });

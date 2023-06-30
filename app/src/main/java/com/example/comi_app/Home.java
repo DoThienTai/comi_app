@@ -97,7 +97,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 " Nhưng khi thần chĩa đinh ba lên đầu các ngọn sóng thì chúng ngoan ngoãn dịu đi. Bão tố ngừng thổI và mặt biển trở nên êm dịu hiền hoà như cũ." +
                 " Chính tay Poseidon chặt ngang các lục địa tạo thành những eo biển, cửa sông. Thần cũng tự tay phát ra các mạch nước nguồn, làm nổi lên những hải đảo." +
                 " Cũng chính Poseidon đã giữ gìn cho các lục địa khỏi sụp đổ."));
-        ls.add(new Comic("Biên niên sử nhà Kane – Kim tự tháp đỏ","Rick Riordan", "https://isach.info/images/story/cover/bien_nien_su_nha_kane_1_kim_tu_thap_do__rick_riordan.jpg", "CHÚNG TÔI CHỈ CÓ MỘT VÀI TIẾNG THÔI, vì thế hãy nghe cho kỹ nhé.\n" +
+        ls.add(new Comic("Kim tự tháp đỏ","Rick Riordan", "https://isach.info/images/story/cover/bien_nien_su_nha_kane_1_kim_tu_thap_do__rick_riordan.jpg", "CHÚNG TÔI CHỈ CÓ MỘT VÀI TIẾNG THÔI, vì thế hãy nghe cho kỹ nhé.\n" +
                 "Nếu bạn đang nghe câu chuyện này, bạn đang gặp nguy hiểm. Sadie và tôi có thể là cơ hội duy nhất dành cho bạn.\n" +
                 "\n" +
                 "Hãy đi đến trường. Tìm chiếc tủ có khóa. Tôi sẽ không nói cho bạn đó là ngôi trường nào và chiếc tủ nào, vì nếu bạn chính là người đó, bạn sẽ tìm thấy được. Dãy số dùng để mở ở khóa là 13/32/33. Vào thời điểm bạn nghe xong đoạn băng này, bạn sẽ biết những con số đó có nghĩa là gì. Nhưng hãy nhớ câu chuyện chúng tôi sắp kể cho bạn hoàn toàn chưa kết thúc. Nó kết thúc như thế nào phụ thuộc vào bạn.\n" +

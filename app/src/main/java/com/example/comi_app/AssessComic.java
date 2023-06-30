@@ -9,13 +9,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AssessComic extends AppCompatActivity {
-    private Button button;
     private List<Comment> commentList = new ArrayList<>();
     private ListView commentListView;
     private CommentDatabase commentDatabase;
@@ -37,7 +37,6 @@ public class AssessComic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comment);
 
-        button = findViewById(R.id.btnbutton);
         commentListView = findViewById(R.id.comment_listview);
 
         EditText nameEditText = findViewById(R.id.comment_name);
@@ -45,6 +44,9 @@ public class AssessComic extends AppCompatActivity {
         RatingBar ratingBar = findViewById(R.id.ratingBar);
         Button commentButton = findViewById(R.id.comment_button);
         Button backButton = findViewById(R.id.btnbutton);
+
+        Intent intent = getIntent();
+        String bookTitle = intent.getStringExtra("bookTitle");
 
         commentDatabase = new CommentDatabase(this);
 
@@ -57,8 +59,10 @@ public class AssessComic extends AppCompatActivity {
                 String content = contentEditText.getText().toString();
                 float rating = ratingBar.getRating();
 
-                int id = 0;
-                Comment comment = new Comment(id, name, content, rating);
+
+                // Tạo mới đối tượng Comment với tên truyện là "Comic Title"
+                Comment comment = new Comment(0, name, content, rating, bookTitle);
+
 
                 addCommentTo(comment);
 
@@ -74,19 +78,11 @@ public class AssessComic extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Thực hiện hành động khi nhấn nút "Trở lại"
-                finish(); // Kết thúc activity và quay lại activity trước đó
+                onBackPressed(); // Gọi phương thức onBackPressed() để thực hiện hành động quay lại mặc định của Activity
             }
         });
 
         displayComments();
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AssessComic.this, Detail.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
